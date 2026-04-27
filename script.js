@@ -1,9 +1,9 @@
-// Ambil data dari localStorage
+// Ambil data dari localStorage atau buat array baru
 let members = JSON.parse(localStorage.getItem("members")) || [];
 
-// =====================
-// TAMPILKAN KE TABEL
-// =====================
+// =======================
+// RENDER TABLE (HOME)
+// =======================
 function renderTable() {
     let table = document.getElementById("memberTable");
     if (!table) return;
@@ -21,9 +21,9 @@ function renderTable() {
     });
 }
 
-// =====================
-// FORM
-// =====================
+// =======================
+// FORM SUBMIT
+// =======================
 document.addEventListener("DOMContentLoaded", function () {
 
     let form = document.getElementById("registrationForm");
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // simpan ke localStorage
             localStorage.setItem("members", JSON.stringify(members));
 
-            // tampilkan hasil
+            // tampilkan hasil di form
             document.getElementById("displayText").innerHTML =
                 `Nama: ${name} <br>Email: ${email} <br>Minat: ${interest}`;
 
@@ -60,9 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
     renderTable();
 });
 
-// =====================
+// =======================
 // MULTIMEDIA
-// =====================
+// =======================
 function changeImage() {
     document.getElementById("techImage").src =
         "https://picsum.photos/400/250?random=" + Math.random();
