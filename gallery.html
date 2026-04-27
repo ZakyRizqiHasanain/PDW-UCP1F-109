@@ -6,35 +6,48 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <a href="./index.html">Home</a>
-        <a href="./form.html">Pendaftaran</a>
-        <a href="./gallery.html">Multimedia</a>
-    </nav>
 
-    <div class="container">
-        <h2>Galeri Multimedia</h2>
-        <div class="media-container">
-            <div>
-                <img id="techImage" src="https://picsum.photos/400/250" alt="Technology">
-                <br>
-                <button onclick="changeImage()" style="margin-top: 10px;">Ganti Gambar</button>
-            </div>
+<nav>
+    <a href="./index.html">Home</a>
+    <a href="./form.html">Pendaftaran</a>
+    <a href="./gallery.html">Multimedia</a>
+</nav>
 
-            <div>
-                <h3>Video Tutorial</h3>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
-            </div>
+<div class="container">
+    <h2>Galeri Multimedia</h2>
 
-            <div>
-                <h3>Audio Podcast</h3>
-                <audio id="myAudio" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
-                <br>
-                <button onclick="playAudio()">Play</button>
-                <button onclick="pauseAudio()" style="background-color: #e74c3c;">Pause</button>
-            </div>
+    <div class="media-container">
+
+        <!-- Gambar -->
+        <div>
+            <img id="techImage" src="https://picsum.photos/400/250">
+            <br>
+            <button onclick="changeImage()">Ganti Gambar</button>
         </div>
-    </div>
 
+        <!-- Video -->
+        <div>
+            <h3>Video Tutorial</h3>
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <!-- Audio -->
+        <div>
+            <h3>Audio Podcast</h3>
+            <audio id="myAudio">
+                <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+            </audio>
+            <br>
+            <button onclick="playAudio()">Play</button>
+            <button onclick="pauseAudio()" class="btn-danger">Pause</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,7 +1,9 @@
-// ARRAY DATA
-let members = [];
+// Ambil data dari localStorage
+let members = JSON.parse(localStorage.getItem("members")) || [];
 
-// LOAD TABLE
+// =====================
+// TAMPILKAN KE TABEL
+// =====================
 function renderTable() {
     let table = document.getElementById("memberTable");
     if (!table) return;
@@ -19,8 +21,11 @@ function renderTable() {
     });
 }
 
+// =====================
 // FORM
+// =====================
 document.addEventListener("DOMContentLoaded", function () {
+
     let form = document.getElementById("registrationForm");
 
     if (form) {
@@ -33,7 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let data = { name, email, interest };
 
+            // simpan ke array
             members.push(data);
+
+            // simpan ke localStorage
+            localStorage.setItem("members", JSON.stringify(members));
 
             // tampilkan hasil
             document.getElementById("displayText").innerHTML =
@@ -43,16 +52,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
             alert("Data berhasil disimpan!");
 
-            renderTable();
-
             form.reset();
         });
     }
 
+    // tampilkan data di home
     renderTable();
 });
 
+// =====================
 // MULTIMEDIA
+// =====================
 function changeImage() {
     document.getElementById("techImage").src =
         "https://picsum.photos/400/250?random=" + Math.random();
